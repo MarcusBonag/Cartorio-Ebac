@@ -123,6 +123,7 @@ int main () 										//função principal
 		printf ("\t1 - Cadastrar Nomes\n");
 		printf ("\t2 - Consultar Nomes\n");
 		printf ("\t3 - Deletar   Nomes\n"); 
+		printf ("\t4 - Fechar Programa\n");
 		printf("Opção:");//fim do menu
 
 	
@@ -142,6 +143,11 @@ int main () 										//função principal
 			
 			case 3: 
 			deletar();
+			break;
+			
+			case 4:
+			printf("Obrigado por utilizar o nosso sistema!\n");
+			return 0;
 			break;
 			
 			default:
