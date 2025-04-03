@@ -107,56 +107,69 @@ int deletar()										//função responsável por deletar o usuários
 	}	
 	//colocar a opção de "tem certeza que deseja deletar?"
 }
-
+	
 int main () 										//função principal
-{
+	{
 	int opcao=0; //definindo as variáveis 
 	int laco=1;
-		
-	for(laco=1;laco=1;)
-	{
-		system("cls");
+	char senhadigitada [10]="a";
+	int comparacao;
 	
-		setlocale(LC_ALL, "portuguese"); //definindo a linguagem 
-		printf ("\n\tLista de Alunos EBAC\n\n"); //início do menu
-		printf ("Selecione a opção desejada\n\n");
-		printf ("\t1 - Cadastrar Nomes\n");
-		printf ("\t2 - Consultar Nomes\n");
-		printf ("\t3 - Deletar   Nomes\n"); 
-		printf ("\t4 - Fechar Programa\n");
-		printf("Opção:");//fim do menu
+	printf ("\n\tLista de Alunos EBAC\n\n"); //início do menu
+	printf ("Login de admninstrador\n\nDigite a sua Senha: ");
+	scanf("%s", senhadigitada);
+	
+	comparacao = strcmp(senhadigitada, "admin");
+	
+	if(comparacao == 0 )
+	{
+			system("cls");
+			for(laco=1;laco=1;)
+		{
+			setlocale(LC_ALL, "portuguese"); //definindo a linguagem 
+			printf ("\n\tLista de Alunos EBAC\n\n"); //início do menu
+			printf ("Selecione a opção desejada\n\n");
+			printf ("\t1 - Cadastrar Nomes\n");
+			printf ("\t2 - Consultar Nomes\n");
+			printf ("\t3 - Deletar   Nomes\n"); 
+			printf ("\t4 - Fechar Programa\n");
+			printf("Opção:");//fim do menu
 
 	
-		scanf("%d", &opcao); // armazenando a escolha do usuário
+			scanf("%d", &opcao); // armazenando a escolha do usuário
 	
-		system("cls"); //comando para limpar a tela do programa
+			system("cls"); //comando para limpar a tela do programa
 		
-		switch(opcao) //forma conjunta do if para ganhar performace 
-		{
-			case 1:
-			registro(); //chamada de funções 
-			break;
+			switch(opcao) //forma conjunta do if para ganhar performace 
+			{
+				case 1:
+				registro(); //chamada de funções 
+				break;
 			
-			case 2:
-			consulta();
-			break;
+				case 2:
+				consulta();
+				break;
 			
-			case 3: 
-			deletar();
-			break;
+				case 3: 
+				deletar();
+				break;
 			
-			case 4:
-			printf("Obrigado por utilizar o nosso sistema!\n");
-			return 0;
-			break;
+				case 4:
+				printf("Obrigado por utilizar o nosso sistema!\n");
+				return 0;
+				break;
 			
-			default:
-			printf("Essa opção nao existe!\n");
-			system("pause");
-			break;		
-		}
+				default:
+				printf("Essa opção nao existe!\n");
+				system("pause");
+				break;		
+				}
+			}	 //final do for (fechando o ciclo)
+	}
+	else 
+		printf("Senha Incorreta!");
 		
-	} //final do for (fechando o ciclo)
-	
-}
+		
+	}
+
 
